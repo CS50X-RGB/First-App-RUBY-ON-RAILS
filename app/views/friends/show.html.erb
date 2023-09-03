@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="bg-blue-400 p-3  rounded-xl shadow-pink-400">
 <%= render @friend %>
 
-<div>
-  <%= link_to "Edit this friend", edit_friend_path(@friend) %> |
-  <%= link_to "Back to friends", friends_path %>
+<div class="shadow-pink-400 shadow-xl text-2xl p-3 text-white flex flex-col md:flex-row gap-3 justify-center items-center">
+  <%= link_to "Edit this friend", edit_friend_path(@friend), class:"px-4 py-2 m-3 bg-pink-500 rounded-xl shadow-xl shadow-blue-800" %> 
+  <%= link_to "Back to friends", friends_path,class:"px-4 py-2 m-3 bg-pink-500 rounded-xl shadow-xl shadow-blue-800"  %>
 
-  <%= button_to "Destroy this friend", @friend, method: :delete %>
+  <%= button_to "Destroy this friend", @friend, method: :delete,class:"px-4 py-2 m-3 bg-pink-500 rounded-xl shadow-xl shadow-blue-800"   %>
+</div>
 </div>

@@ -1,9 +1,11 @@
-<h1>New friend</h1>
+<div class="bg-blue-300 flex flex-col p-4 rounded-xl shadow-xl shadow-blue-800">
+<h1 class="text-pink-400 p-3 text-4xl font-bold font-strong">New friend</h1>
 
 <%= render "form", friend: @friend %>
 
 <br>
 
-<div>
+<div class="text-center">
   <%= link_to "Back to friends", friends_path %>
+</div>
 </div>
