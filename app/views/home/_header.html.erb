@@ -1,12 +1,34 @@
 <nav class="bg-blue-500 shadow-xl shadow-blue-800 rounded-b-xl p-8 flex flex-row justify-between">
     <div class="flex flex-row gap-5">
-        <%= link_to 'Friend App', root_path, class:"text-4xl font-bold text-pink-400"  %>
-        <%= link_to 'About_Us', home_about_path ,class:"text-2xl text-pink-400"%>
-        <%= link_to 'Friends', friends_path ,class:"text-2xl text-pink-400"%>
-        <%= link_to 'Add Friends', new_friend_path ,class:"text-2xl text-pink-400"%>
-    </div>
+        <%= link_to 'Friend App', root_path, class: "text-4xl font-bold text-pink-400" %>
+        <%= link_to 'About Us', home_about_path, class: "text-2xl text-pink-400" %>
+        <%= link_to 'Friends', friends_path, class: "text-2xl text-pink-400" %>
+        
+           <% if user_signed_in? %>
+        <li class="text-2xl text-pink-400">
+          <%= link_to "Add Friend", new_friend_path, class:"text-2xl text-pink-400" %>
+        </li>
+
+        <li class="text-2xl text-pink-400">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"text-2xl text-pink-400" %>
+        </li>
+
+        <li class="text-2xl text-pink-400">
+            <%= link_to "Edit Profile", edit_user_registration_path, class:"text-2xl text-pink-400" %>
+        </li>
+
+    <% else %>
+        <li class="text-2xl text-pink-400">
+            <%= link_to "Sign Up", new_user_registration_path, class:"text-2xl text-pink-400" %>
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "Sign In", new_user_session_path, class:"text-2xl text-pink-400" %>
+        </li>
+    <% end %>               
+    </div> 
     <div class="flex flex-row gap-3">
-    <input type="text" placeholder="Search.." class="rounded-xl p-3 border border-2 border-blue-200 hover:border-2  hover:border-blue-700"/>
-    <button class="text-white border-blue-800 border-2 rounded-xl p-3 text-2xl font-bold hover:bg-pink-400">Search</button>
+        <input type="text" placeholder="Search.." class="rounded-xl p-3 border border-2 border-blue-200 hover:border-2 hover:border-blue-700"/>
+        <button class="text-white border-blue-800 border-2 rounded-xl p-3 text-2xl font-bold hover:bg-pink-400">Search</button>
     </div>
 </nav>
